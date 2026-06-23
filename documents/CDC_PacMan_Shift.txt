@@ -1,0 +1,1047 @@
+====================================================
+CAHIER DES CHARGES – JEU VIDÉO
+Projet : PAC//SHIFT
+====================================================
+
+----------------------------------------------------
+A. DESCRIPTION GÉNÉRALE
+----------------------------------------------------
+
+Objectifs :
+- Réinventer le gameplay de Pac-Man à travers une mécanique centrale innovante : le Shift de réalité.
+- Proposer une expérience arcade moderne, rejouable et systémique.
+- Démontrer un concept fort via un MVP exploitable comme démo, vertical slice ou projet académique.
+
+Public cible :
+- Joueur·euse·s mid-core à core (16–35 ans).
+- Amateur·rice·s de jeux indie, rogue-lite et expériences systémiques.
+- Étudiant·e·s et professionnel·le·s du jeu vidéo.
+- Streamers et créateur·rice·s de contenu.
+
+Plus-value (USP) :
+- Les règles du monde deviennent l’outil principal du joueur.
+- La maîtrise repose sur la compréhension des systèmes, pas sur la mémorisation.
+- Héritage Pac-Man respecté mais détourné par des mécaniques contemporaines.
+
+-> PAC//SHIFT se distingue des rogue-lite existants en combinant l’accessibilité immédiate d’un gameplay arcade iconique — hérité de Pac-Man — avec une profondeur systémique moderne basée sur la manipulation dynamique des règles du jeu. Contrairement aux rogue-lite traditionnels souvent exigeants dès les premières minutes, PAC//SHIFT propose une prise en main instantanée (déplacement simple, objectifs lisibles) tout en introduisant progressivement une complexité stratégique via les mécaniques de Shift de réalité. Cette hybridation permet des sessions de jeu courtes (5 à 10 minutes), parfaitement adaptées aux usages contemporains, tout en conservant une forte re jouabilité et une montée en maîtrise gratifiante. Le joueur ne progresse pas uniquement par accumulation de compétences ou d’objets, mais par compréhension active et exploitation des systèmes, transformant chaque run en expérience unique, rapide et intensément engageante.
+
+Contexte d’utilisation :
+- Jeu PC / navigateur (priorité au web).
+- Sessions courtes (10 à 30 minutes).
+- Compatible démonstration publique, jury, salons, diffusion en ligne.
+
+----------------------------------------------------
+B. SYNOPSIS ET UNIVERS
+----------------------------------------------------
+
+Synopsis :
+PAC//SHIFT se déroule dans un labyrinthe instable issu d’un système arcade corrompu.
+Le joueur incarne une entité consciente tentant d’échapper à un monde dont les lois
+physiques, temporelles et spatiales sont défaillantes.
+Les fantômes ne sont plus de simples ennemis mais des processus cherchant à exploiter
+ou corriger ces anomalies.
+
+Univers visuel :
+- Esthétique néon, glitch, vectorielle.
+- Labyrinthes déformables en temps réel.
+- Effets visuels indiquant clairement les règles actives.
+
+Univers sonore :
+- Musique électronique adaptative.
+- Chaque Shift modifie tempo, filtres et tonalité.
+- Sound design fonctionnel servant de feedback de gameplay.
+
+----------------------------------------------------
+C. BOUCLE DE GAMEPLAY (CORE LOOP)
+----------------------------------------------------
+
+1. Explorer un labyrinthe modulaire.
+2. Collecter des pastilles pour progresser et charger la jauge de Shift.
+3. Éviter, manipuler ou exploiter les fantômes.
+4. Activer un Shift modifiant les règles du monde.
+5. Atteindre l’objectif du niveau.
+6. Débloquer des mutations et progresser dans le run.
+
+----------------------------------------------------
+D. CONTRÔLES ET INTERFACE
+----------------------------------------------------
+
+Contrôles :
+- Déplacement directionnel.
+- Bouton d’activation du Shift.
+- Bouton secondaire pour mutation active (si débloquée).
+
+Interface :
+- UI minimaliste intégrée au décor.
+- Jauge de Shift visible autour du personnage.
+- Icônes indiquant les règles actives.
+- Feedback visuel et sonore clair lors des changements d’état.
+
+----------------------------------------------------
+E. CONDITIONS DE JEU
+----------------------------------------------------
+
+Conditions de victoire :
+- Nettoyage du labyrinthe ou atteinte d’un objectif spécifique.
+- Réussite d’un run complet.
+
+Conditions de défaite :
+- Collision fatale avec un fantôme.
+- Effondrement du labyrinthe.
+- Échec d’un objectif critique.
+
+La défaite alimente la méta progression.
+
+----------------------------------------------------
+F. FONCTIONNALITÉS (LISTE EXHAUSTIVE)
+----------------------------------------------------
+
+Gameplay :
+- Déplacement précis.
+- Collecte de pastilles.
+- Fantômes à comportements distincts.
+- Jauge et activation de Shifts.
+- Règles modifiables : gravité, temps, collisions, topologie.
+- Interaction règles / ennemis.
+
+Rogue-lite :
+- Runs successifs.
+- Déblocages persistants.
+- Mutations passives et actives.
+- Difficulté progressive.
+
+Interface et feedback :
+- UI intégrée.
+- Indicateurs de règles.
+- Feedback visuel et sonore.
+- Écrans victoire / défaite.
+
+Technique et confort :
+- Génération modulaire de niveaux.
+- Sauvegarde de progression.
+- Paramètres audio et vitesse.
+- Accessibilité visuelle minimale.
+
+----------------------------------------------------
+G. STACK TECHNIQUE
+----------------------------------------------------
+
+Build :
+- Vite.js (obligatoire).
+
+Langage :
+- JavaScript Vanilla (ES6+).
+- ES Modules natifs.
+- Aucun framework UI.
+- Aucun TypeScript.
+
+Moteur :
+- Phaser.js (2D).
+- Intégré via ES Modules.
+
+Audio :
+- Howler.js.
+
+Architecture :
+- Organisation modulaire (scenes, systems, entities).
+- Gestion d’état simple (machines à états).
+- Aucun state manager externe.
+
+Outils :
+- ES Lint.
+- Git.
+- Déploiement web statique (itch.io, GitHub Pages).
+
+----------------------------------------------------
+H. ASSETS MULTIMÉDIA (IA)
+----------------------------------------------------
+
+Visuels :
+- Concept art des labyrinthes et fantômes.
+- Sprites du joueur et ennemis.
+- Effets visuels de Shift.
+- Textures glitch et néon.
+
+Audio :
+- Musiques électroniques adaptatives.
+- Sound effects (Shift, collecte, danger).
+
+Vidéo :
+- Teaser 15–30 secondes.
+- Captures animées de gameplay.
+- GIFs promotionnels.
+
+Outils IA possibles :
+- Images : Midjourney, Stable Diffusion, Firefly.
+- Audio : Suno, Udio, Soundraw.
+- Vidéo : Runway, Pika.
+
+====================================================
+BENCHMARK CONCURRENTIEL – PAC//SHIFT
+====================================================
+
+| Jeu de référence              | Similarité avec PAC//SHIFT                                      | Différence clé (avantage PAC//SHIFT)                                  | Risque / Limite                                                      |
+|------------------------------|------------------------------------------------------------------|------------------------------------------------------------------------|----------------------------------------------------------------------|
+| Pac-Man Championship Edition | Gameplay arcade rapide, lisibilité immédiate, pression constante | 
+PAC//SHIFT introduit une modification dynamique des règles (Shift),    | Risque de perdre la simplicité pure de Pac-Man si les systèmes         | basée sur la collecte et l’évitement d’ennemis                  | transformant le gameplay en système évolutif et non figé              | deviennent trop complexes ou peu lisibles                            |
+|------------------------------|------------------------------------------------------------------|------------------------------------------------------------------------|----------------------------------------------------------------------|
+| Crypt of the NecroDancer     | Déplacements sur grille avec forte tension et lecture du timing | 
+PAC//SHIFT ne contraint pas le joueur au rythme mais lui donne         | Absence de contrainte rythmique peut réduire la tension structurée     | le contrôle des règles du monde (temps, gravité), augmentant la        | et rendre l’expérience moins immédiatement cadrée            | liberté stratégique en temps réel                                      |                                                                      |
+|------------------------------|------------------------------------------------------------------|------------------------------------------------------------------------|----------------------------------------------------------------------|
+| Vampire Survivors            | Expérience accessible, runs courts, forte re jouabilité          | PAC//SHIFT repose sur la maîtrise active (skill-based) et la           | Peut paraître plus exigeant et moins “dopamine immédiate” pour un     | compréhension des systèmes, et non sur l’automatisation            | public casual habitué à l’auto-progression                           |
+|------------------------------|------------------------------------------------------------------|------------------------------------------------------------------------|----------------------------------------------------------------------|
+| Hades                        | Structure rogue-lite avec progression et re jouabilité           | PAC//SHIFT privilégie des sessions ultra-courtes (5–10 min) et         | Moins de profondeur narrative et d’attachement émotionnel      | une intensité immédiate arcade     | comparé à une expérience longue et scénarisée                        |
+|------------------------------|------------------------------------------------------------------|------------------------------------------------------------------------|----------------------------------------------------------------------|
+| Baba Is You                  | Manipulation des règles comme cœur du gameplay                  | PAC//SHIFT applique ces changements en temps réel dans un contexte     | Difficulté potentielle à maintenir une lisibilité parfaite des règles d’action rapide, ajoutant réflexe et pression  dans un environnement dynamique|                                
+
+-> Positionnement clair : PAC//SHIFT se situe à l’intersection de :
+
+l’arcade classique (Pac-Man CE),
+du rogue-lite moderne (Hades, Vampire Survivors),
+et du game design systémique (Baba Is You).
+
+-> Différenciation majeure :
+
+Là où les autres jeux excellent chacun dans un domaine spécifique, PAC//SHIFT combine accessibilité, systémique et intensité en temps réel dans des sessions courtes et rejouables.
+
+-> Avantage compétitif principal :
+
+La manipulation immédiate des règles pendant l’action (et non avant ou entre les runs).
+Une expérience skill-based + systémique, rare dans le genre.
+
+👉 La différence fondamentale entre Baba Is You et PAC//SHIFT réside dans la gestion du temps et de la pression décisionnelle. Baba Is You repose sur un système au tour par tour synchrone : le monde est entièrement figé tant que le joueur n’effectue pas d’entrée. Chaque action déclenche une mise à jour globale de l’état du jeu, permettant une réflexion analytique sans contrainte temporelle. Le gameplay favorise ainsi une approche déductive et exploratoire, où l’erreur est sans conséquence immédiate.
+À l’inverse, PAC//SHIFT fonctionne en temps réel continu. Le joueur évolue dans un système dynamique où les entités (fantômes) poursuivent leurs comportements sans interruption, indépendamment de la prise de décision du joueur. Le SHIFT — qui modifie les règles du monde (gravité, collisions, topologie, etc.) — doit être déclenché sous contrainte temporelle active.
+Cette contrainte transforme profondément l’expérience :
+
+Charge cognitive simultanée : le joueur doit à la fois analyser la situation, anticiper les trajectoires ennemies et décider du moment opportun pour activer le SHIFT.
+Tension systémique continue : contrairement à un système discret, l’absence de pause maintient une pression constante, augmentant le stress contrôlé.
+Risque immédiat : toute hésitation entraîne une sanction potentielle (collision), ce qui donne au timing une importance critique.
+Réactivité moteur : le SHIFT devient un outil d’exécution, pas uniquement de planification. Il s’inscrit dans une logique d’action réflexe augmentée par la compréhension des systèmes.
+
+D’un point de vue technique, cela implique :
+
+une boucle de jeu en update temps réel (deltaTime),
+des IA ennemies actives en continu,
+un système de règles modifiables à chaud, sans interruption du flux.
+
+Synthèse design :
+
+Baba Is You = manipulation de règles en temps suspendu (réflexion pure)
+PAC//SHIFT = manipulation de règles en temps contraint (décision sous pression)
+
+Cette transition vers le temps réel permet d’introduire une dimension essentielle absente de Baba Is You :
+la maîtrise du timing comme compétence centrale, au croisement de la réflexion stratégique et de l’exécution arcade.
+
+👉 Le concurrent le plus dangereux pour PAC//SHIFT est Pac-Man 256 (Hipster Whale, 2015), car il occupe déjà une position très proche en termes de modernisation du gameplay arcade de Pac-Man adaptée aux usages contemporains.
+🔍 Pourquoi Pac-Man 256 est un concurrent critique
+
+Il propose une boucle de jeu extrêmement accessible et immédiate, fidèle aux fondamentaux du Pac-Man original (collecte, esquive, scoring).
+Il introduit une pression continue grâce au “bug 256” qui force le joueur à avancer, générant une tension constante similaire à celle recherchée dans PAC//SHIFT.
+Il intègre des éléments modernes (power-ups, progression légère) qui rendent l’expérience rejouable et adaptée aux sessions courtes.
+Il possède déjà une maîtrise du pacing arcade, avec une montée en intensité très bien calibrée.
+
+👉 En résumé, Pac-Man 256 réussit déjà ce que PAC//SHIFT cherche à atteindre sur un axe clé :
+un Pac-Man moderne, nerveux, accessible et adapté au jeu rapide.
+
+⚠️ Le risque pour PAC//SHIFT
+
+Être perçu comme une variation complexe d’un concept déjà modernisé.
+Perdre en lisibilité ou en accessibilité face à un concurrent très “plug & play”.
+Surcharger le gameplay avec des systèmes au détriment du fun immédiat.
+
+🎯 Stratégie de différenciation de PAC//SHIFT
+Pour se démarquer clairement, PAC//SHIFT mise sur une approche radicalement différente :
+1. Gameplay systémique (vs arcade enrichie)
+
+Pac-Man 256 enrichit la formule existante.
+PAC//SHIFT introduit une mutation structurelle : le joueur manipule les règles du jeu en temps réel.
+
+👉 Le cœur du jeu n’est plus “éviter et consommer”, mais :
+comprendre, modifier et exploiter un système dynamique.
+
+2. Shift comme mécanique centrale (vs power-ups)
+
+Dans Pac-Man 256, les power-ups sont ponctuels et bonus.
+Dans PAC//SHIFT, le SHIFT est :
+
+central,
+stratégique,
+déterminant pour survivre.
+
+👉 On passe de :
+
+bonus passif → à → outil actif de prise de décision
+
+3. Depth over scoring
+
+Pac-Man 256 repose sur :
+
+score,
+survie,
+optimisation du run.
+
+PAC//SHIFT repose sur :
+
+maîtrise des règles,
+adaptation en temps réel,
+lecture systémique.
+
+👉 Le scoring devient secondaire face à la compréhension du jeu.
+
+4. Évolution rogue-lite maîtrisée
+
+PAC//SHIFT introduit une progression par :
+
+déblocage de nouveaux types de SHIFT,
+mutations,
+variation des règles.
+
+👉 Contrairement à Pac-Man 256, l’évolution ne se limite pas à des upgrades :
+elle transforme la manière de jouer.
+
+✅ Synthèse stratégique
+
+Pac-Man 256 est le concurrent le plus dangereux car il modernise parfaitement l’arcade.
+PAC//SHIFT se différencie en transformant l’arcade en système.
+
+Pac-Man 256 = optimisation d’un modèle existant
+PAC//SHIFT = changement de paradigme (rules-driven gameplay)
+
+👉 Positionnement final :
+PAC//SHIFT n’est pas “plus de Pac-Man”
+mais “Pac-Man réinventé par la manipulation des règles en temps réel”
+
+====================================================
+ONBOARDING – 10 PREMIÈRES SECONDES
+PAC//SHIFT
+====================================================
+
+OBJECTIF :
+
+En moins de 10 secondes, le joueur doit :
+- Comprendre le danger (fantôme),
+- Maîtriser les contrôles de base,
+- Découvrir et comprendre intuitivement le SHIFT.
+
+Sans tutoriel textuel.
+
+----------------------------------------------------
+
+SECONDES 0–3 — PERCEPTION DU DANGER
+-----------------------------------
+
+Situation :
+- Le joueur apparaît au centre d’un labyrinthe simple.
+- Un fantôme est immédiatement visible à proximité.
+- Le fantôme se déplace directement vers le joueur.
+
+Design intention :
+- Mise en place d'une menace claire et lisible.
+- Trajectoire ennemie simple → compréhension immédiate.
+
+Game Feel :
+- Tension instantanée
+- Urgence légère (mais contrôlée)
+
+Résultat attendu :
+→ Le joueur identifie : "quelque chose me poursuit"
+
+----------------------------------------------------
+
+SECONDES 4–7 — PRISE EN MAIN & CONSTRAINTE
+------------------------------------------
+
+Situation :
+- Le joueur commence à se déplacer (contrôles directionnels).
+- Il suit un couloir ou entre dans une impasse.
+- Le fantôme continue sa poursuite.
+
+Design intention :
+- Apprentissage par action (pas de tutoriel).
+- Mise en situation d’échec imminent.
+
+Game Feel :
+- Stress croissant
+- Sensation de piège
+
+Résultat attendu :
+→ Le joueur comprend :
+  - Comment se déplacer
+  - Que le fantôme est une menace constante
+  - Qu’il va perdre s’il ne fait rien
+
+----------------------------------------------------
+
+SECONDES 8–10 — RÉVÉLATION DU SHIFT
+-----------------------------------
+
+Situation :
+- Le joueur est acculé (quasi collision).
+- Il active instinctivement le bouton SHIFT (ou input incité).
+- Le labyrinthe se transforme :
+  → un mur disparaît / devient traversable
+
+Design intention :
+- Déclencher une **découverte mécanique clé par nécessité**.
+- Associer SHIFT = solution immédiate à une situation critique.
+
+Feedback :
+- Effet visuel fort (glitch, déformation)
+- Effet sonore marquant (rupture)
+
+Game Feel :
+- Surprise
+- Soulagement (release)
+- Puissance soudaine
+
+Résultat attendu :
+→ Le joueur comprend instantanément :
+"Je peux changer les règles pour survivre"
+
+----------------------------------------------------
+
+SYNTHÈSE DESIGN
+
+Boucle onboarding :
+
+Danger perçu → Action → Échec imminent → Solution découverte
+
+Ce design repose sur 3 principes :
+- Apprentissage par pression (et non par explication)
+- Feedback immédiat et lisible
+- Révélation mécanique dans un moment critique
+
+----------------------------------------------------
+
+INTENTION UX
+
+PAC//SHIFT évite :
+- les tutoriels textuels,
+- les explications abstraites,
+- les interruptions de flow.
+
+Et privilégie :
+- la découverte active,
+- la compréhension par expérience,
+- la mémorisation émotionnelle (stress → soulagement).
+
+----------------------------------------------------
+
+OBJECTIF FINAL
+
+En 10 secondes, le joueur doit internaliser :
+
+"Je suis poursuivi, je peux agir, et le SHIFT est ma clé de survie."
+
+====================================================
+FIN – ONBOARDING 10 SECONDES
+====================================================
+
+====================================================
+GAME FEEL – BOUCLE D’EXPÉRIENCE (30 secondes)
+PAC//SHIFT
+====================================================
+
+Timeline (30s) :
+
+[0s–5s]        [5s–20s]                  [20s–25s]               [25s–30s]
+   |              |                          |                        |
+   v              v                          v                        v
+
+┌──────────┐  ┌────────────────────┐  ┌────────────────────┐  ┌────────────────────┐
+│ Lecture  │→│ TENSION / SURVIE   │→│ SHIFT (RUPTURE)     │→│ DOMINATION / FLOW   │
+│ instant. │  │ Mode "proie"       │  │ Changement règles  │  │ Mode "prédateur"   │
+└──────────┘  └────────────────────┘  └────────────────────┘  └────────────────────┘
+
+
+Détail UX / Game Feel :
+
+1. ORIENTATION (0–5s)
+---------------------
+- Identification immédiate des éléments :
+  joueur, ennemis, trajectoires, pastilles
+- Faible charge cognitive
+- Entrée rapide en action
+
+→ Objectif : "Je comprends → je joue immédiatement"
+
+----------------------------------------------------
+
+2. TENSION (5–20s)
+------------------
+- Pression croissante des fantômes
+- Optimisation des trajectoires
+- Lecture dynamique du labyrinthe
+- Accumulation de la jauge de SHIFT
+
+Game Feel :
+- Stress contrôlé
+- Précision
+- Anticipation
+
+→ Objectif : "Je suis en danger, mais j’ai le contrôle"
+
+----------------------------------------------------
+
+3. RUPTURE / SHIFT (20–25s)
+---------------------------
+- Activation volontaire du SHIFT
+- Modification brutale des règles :
+  (gravité, collisions, temps…)
+
+Feedback :
+- Effets visuels (glitch, distorsion)
+- Rupture sonore (tempo / filtre)
+
+Game Feel :
+- Surprise contrôlée
+- Reconfiguration mentale immédiate
+
+→ Objectif : "Le jeu change — je dois m’adapter"
+
+----------------------------------------------------
+
+4. DOMINATION (25–30s)
+----------------------
+- Exploitation des nouvelles règles
+- Avantage temporaire sur les ennemis
+- Jeu plus agressif
+
+Game Feel :
+- Puissance
+- Fluidité
+- Satisfaction
+
+→ Objectif : "Je maîtrise enfin le système"
+
+----------------------------------------------------
+
+SYNTHÈSE ÉMOTIONNELLE
+
+TENSION ───────────► RUPTURE ───────────► LIBÉRATION
+(survie)              (Shift)             (domination)
+
+Courbe :
+
+Stress ↑↑↑↑        Pic de surprise        Release / flow
+Contrôle ↓         Déséquilibre           Contrôle ↑↑
+
+----------------------------------------------------
+
+INTENTION DESIGN
+
+PAC//SHIFT repose sur une micro-boucle répétable :
+
+→ Survie (lecture + tension)
+→ Décision (activer SHIFT)
+→ Exploitation (domination temporaire)
+
+Cette alternance produit :
+- une intensité immédiate (arcade),
+- une profondeur systémique (règles dynamiques),
+- une re jouabilité élevée (variabilité des situations).
+
+
+====================================================
+MVP ABSOLU – PAC//SHIFT (FILTRE RADICAL)
+====================================================
+
+PRINCIPE :
+
+Si 50 % du projet doit être supprimé immédiatement,
+le MVP doit conserver UNIQUEMENT les éléments nécessaires
+pour démontrer :
+
+→ la boucle de gameplay,
+→ la lisibilité,
+→ la mécanique centrale de SHIFT.
+
+Tout le reste est considéré comme secondaire.
+
+----------------------------------------------------
+MVP STRICT (CE QUI DOIT ABSOLUMENT RESTER)
+----------------------------------------------------
+
+Gameplay cœur :
+- 1 joueur unique (Pac-Man moderne).
+- Déplacement sur une grille simple (labyrinthe fixe ou semi-fixe).
+- 1 type de pastille (collecte).
+- 1 objectif clair : nettoyer le niveau.
+
+Ennemi :
+- 1 seul type de fantôme fonctionnel :
+  - comportement simple (poursuite directe).
+  - vitesse constante.
+
+Mécanique centrale :
+- 1 seul type de SHIFT implémenté :
+  (ex : inversion de gravité OU traversée des murs).
+- Activation manuelle via une jauge.
+- Jauge se recharge en collectant des pastilles.
+
+Feedback :
+- 1 feedback visuel clair lors du SHIFT (couleur / effet simple).
+- 1 feedback sonore minimal.
+- Collision lisible (mort immédiate).
+
+Structure :
+- 1 niveau rejouable (pas de progression multi-niveaux).
+- Boucle :
+  jouer → mourir → recommencer instantanément.
+
+----------------------------------------------------
+OBJECTIF DU MVP
+----------------------------------------------------
+
+Valider une hypothèse unique :
+
+"Le SHIFT rend le gameplay arcade plus profond et intéressant."
+
+Si cette hypothèse est validée :
+→ le projet est viable.
+
+Sinon :
+→ le concept doit être réajusté.
+
+----------------------------------------------------
+SHOULD HAVE (SI TEMPS DISPONIBLE)
+----------------------------------------------------
+
+- 2e type de SHIFT.
+- Variation simple du comportement du fantôme (accélération).
+- Génération légère de variations de niveau.
+- Ajout d’un score.
+- Audio un peu plus riche.
+
+Justification :
+Ces éléments améliorent la re jouabilité et la profondeur,
+sans être nécessaires à la validation du concept.
+
+----------------------------------------------------
+COULD HAVE (CONFORT / RICHESSE)
+----------------------------------------------------
+
+- Multiples fantômes.
+- Mutations (rogue-lite).
+- Différents types de pastilles.
+- Interface plus travaillée.
+- Musique adaptative complète.
+- Effets visuels avancés.
+
+Justification :
+Améliorations qualitatives et sensationnelles,
+mais non indispensables au prototype.
+
+----------------------------------------------------
+WON’T HAVE (EXCLUS DU MVP)
+----------------------------------------------------
+
+- Multijoueur.
+- Plusieurs niveaux structurés.
+- Boss.
+- Narration explicite.
+- Système RPG.
+- Progression persistante complexe.
+- Éditeur de niveaux.
+- Systèmes online.
+
+Justification :
+Ces éléments :
+- augmentent fortement la complexité,
+- détournent du cœur du gameplay,
+- ralentissent la validation du concept.
+
+----------------------------------------------------
+SYNTHÈSE STRATÉGIQUE
+----------------------------------------------------
+
+Le MVP de PAC//SHIFT doit être :
+
+- Minimal (réduction maximale du scope)
+- Jouable immédiatement
+- Focalisé sur UNE mécanique différenciante
+
+→ SHIFT + déplacement + tension = preuve du concept
+
+Tout élément n’améliorant pas directement cette équation
+est retiré du périmètre initial.
+
+====================================================
+FIN – MVP ABSOLU
+====================================================
+
+====================================================
+LIVRABLE CRASH TEST – J+7
+PAC//SHIFT
+====================================================
+
+OBJECTIF :
+
+Au bout de 7 jours, produire une démo technique minimale
+permettant de valider :
+→ la jouabilité de base
+→ la boucle de déplacement
+→ la mécanique centrale de SHIFT
+
+Aucun élément cosmétique n’est requis.
+
+----------------------------------------------------
+PÉRIMÈTRE TECHNIQUE STRICT
+----------------------------------------------------
+
+1. ENVIRONNEMENT
+
+- Grille 2D simple (tilemap ou tableau logique)
+- Murs (collision bloquante)
+- Couloirs navigables
+
+Représentation :
+- carrés basiques (debug)
+- absence totale de sprites finaux
+
+----------------------------------------------------
+
+2. JOUEUR
+
+- Un objet joueur (forme simple : cercle ou carré)
+- Déplacement directionnel (4 directions)
+- Mouvement fluide case à case ou continu
+
+Contraintes :
+- Collision avec murs
+- Vitesse constante
+
+Validation :
+→ Le joueur peut naviguer librement dans le labyrinthe
+
+----------------------------------------------------
+
+3. ENNEMI (FANTÔME)
+
+- 1 seul ennemi actif
+- IA simple :
+  → poursuite directe du joueur (vectorielle ou grille)
+
+Comportement :
+- déplacement continu
+- ignore toute complexité avancée
+
+Validation :
+→ L’ennemi représente une menace réelle
+
+----------------------------------------------------
+
+4. COLLISIONS
+
+- Détection player / mur
+- Détection player / ennemi
+
+Effet :
+- collision ennemi = reset immédiat de la partie
+
+Validation :
+→ boucle basique "jouer → mourir → recommencer"
+
+----------------------------------------------------
+
+5. MÉCANIQUE SHIFT (CŒUR DU CRASH TEST)
+
+- 1 seul SHIFT implémenté (exclusivement)
+
+Exemples possibles :
+- traversée temporaire des murs
+OU
+- ouverture dynamique d’un passage
+OU
+- suppression d’un mur ciblé
+
+Contraintes :
+- activation via une touche unique
+- effet immédiat (pas d’animation complexe)
+- durée courte ou déclenchement instantané
+
+Logique technique :
+- modification d’une règle du moteur en runtime
+  (collision, état d’un tile, variable globale)
+
+Validation CRITIQUE :
+→ Le SHIFT doit changer concrètement une situation perdante
+
+----------------------------------------------------
+
+6. BOUCLE DE JEU
+
+- Spawn joueur + ennemi
+- Déplacement
+- Pression (ennemi actif)
+- Utilisation du SHIFT
+- Mort → reset instantané
+
+Validation :
+→ Loop jouable sans interruption
+
+----------------------------------------------------
+
+7. FEEDBACK MINIMAL (NON COSMÉTIQUE)
+
+- Changement visuel simple lors du SHIFT :
+  (ex : couleur du joueur ou des murs)
+
+- Aucun son nécessaire
+
+Objectif :
+→ Rendre le SHIFT perceptible sans habillage
+
+----------------------------------------------------
+
+----------------------------------------------------
+EXCLUSIONS STRICTES (À J+7)
+----------------------------------------------------
+
+- Aucun asset graphique final
+- Aucun son complexe
+- Aucun menu
+- Aucun scoring
+- Aucun système rogue-lite
+- Aucun multi-niveau
+- Aucun polish
+
+Tout ajout non essentiel = hors scope
+
+----------------------------------------------------
+
+----------------------------------------------------
+CRITÈRE DE RÉUSSITE (TRÈS IMPORTANT)
+----------------------------------------------------
+
+Un testeur externe doit pouvoir dire en moins de 2 minutes :
+
+"Je comprends que je suis poursuivi
+et que je peux modifier les règles pour survivre."
+
+Si ce critère n’est pas atteint :
+→ le concept n’est pas validé
+
+----------------------------------------------------
+
+----------------------------------------------------
+SYNTHÈSE
+----------------------------------------------------
+
+Le Crash Test J+7 n’est pas un jeu.
+
+C’est une preuve technique que :
+→ déplacement + pression + SHIFT = gameplay intéressant
+
+Tout le reste est volontairement ignoré.
+
+====================================================
+FIN – CRASH TEST J+7
+====================================================
+
+====================================================
+PLANNING DE DÉVELOPPEMENT – PAC//SHIFT
+Méthode Agile (Sprints)
+====================================================
+
+Durée totale indicative : 6 à 8 semaines
+Organisation en phases progressives avec livrables testables
+
+----------------------------------------------------
+PHASE 1 — PROTOTYPE (GREYBOX)
+Semaines 1–2
+----------------------------------------------------
+
+Objectif :
+Valider le gameplay de base sans habillage (focus mécanique).
+
+Tâches principales :
+- Mise en place du projet (Vite + Phaser + structure JS)
+- Implémentation du déplacement joueur
+- Création d’un labyrinthe simple (grille statique)
+- Ajout des pastilles (collecte)
+- Implémentation d’un fantôme (IA simple poursuite)
+- Détection collision (mort)
+- Implémentation du SHIFT (version minimale)
+
+Livrable concret :
+→ Prototype jouable “moche mais fonctionnel”
+→ Boucle complète : jouer → éviter → SHIFT → mourir
+
+Critère de validation :
+→ Le SHIFT change réellement la manière de jouer
+
+----------------------------------------------------
+PHASE 2 — CONSOLIDATION GAMEPLAY
+Semaines 3–4
+----------------------------------------------------
+
+Objectif :
+Stabiliser et enrichir le cœur du gameplay.
+
+Tâches principales :
+- Amélioration du SHIFT (effet plus clair et impactant)
+- Ajout d’un second type de SHIFT (optionnel mais recommandé)
+- Ajustement du comportement du fantôme
+- Ajout d’un système de score
+- Amélioration de la lisibilité (contrastes, feedbacks)
+- Introduction d’une variation simple de niveau
+
+Livrable concret :
+→ Prototype jouable stable et compréhensible
+→ Premiers éléments de fun et rejouabilité
+
+Critère de validation :
+→ Joueur externe comprend et exploite le SHIFT sans explication
+
+----------------------------------------------------
+PHASE 3 — ARCHITECTURE & SYSTÈMES
+Semaines 4–5
+----------------------------------------------------
+
+Objectif :
+Structurer proprement le code et préparer l’extensibilité.
+
+Tâches principales :
+- Refactorisation en modules (entities / systems / scenes)
+- Intégration Howler.js pour l’audio
+- Mise en place des états de jeu (menu, run, game over)
+- Ajout d’une structure de run (enchaînement simple)
+- Paramètres de base (volume, restart rapide)
+
+Livrable concret :
+→ Version stable et organisée du projet
+→ Architecture claire et maintenable
+
+Critère de validation :
+→ Code modulaire + aucune régression gameplay
+
+----------------------------------------------------
+PHASE 4 — HABILLAGE & UX
+Semaines 5–6
+----------------------------------------------------
+
+Objectif :
+Transformer le prototype en expérience visuelle et sonore cohérente.
+
+Tâches principales :
+- Ajout des assets visuels (sprites, FX SHIFT, UI)
+- Intégration des sons (collecte, danger, activation)
+- Amélioration du feedback utilisateur
+- UI minimaliste (jauge SHIFT, indicateurs)
+- Polish des animations
+
+Livrable concret :
+→ Version présentable visuellement
+→ Expérience utilisateur fluide et lisible
+
+Critère de validation :
+→ Le jeu est compréhensible sans explication orale
+
+----------------------------------------------------
+PHASE 5 — POLISH & DEBUG
+Semaines 6–7
+----------------------------------------------------
+
+Objectif :
+Finaliser le produit pour présentation.
+
+Tâches principales :
+- Correction des bugs
+- Ajustement difficulté
+- Optimisation des performances
+- Ajout écran début / fin
+- Tests utilisateurs rapides
+
+Livrable concret :
+→ Version stable, jouable et démontrable
+
+Critère de validation :
+→ Une session complète peut être jouée sans problème critique
+
+----------------------------------------------------
+PHASE 6 — FINALISATION & PRÉSENTATION
+Semaine 8
+----------------------------------------------------
+
+Objectif :
+Préparer la soutenance et livrables finaux.
+
+Tâches principales :
+- Capture vidéo du gameplay
+- Création d’un teaser court
+- Préparation du pitch oral
+- Finalisation du cahier des charges
+
+Livrable concret :
+→ Démo jouable + support de présentation
+
+Critère de validation :
+→ Projet prêt à être montré à un jury
+
+----------------------------------------------------
+SYNTHÈSE MÉTHODOLOGIQUE
+----------------------------------------------------
+
+Approche adoptée :
+
+- Itérative (Agile) : chaque phase produit une version testable
+- Focalisation sur le gameplay avant le visuel
+- Validation rapide du concept (SHIFT)
+- Réduction des risques techniques en début de projet
+
+Principe clé :
+→ "Tester tôt, corriger vite, enrichir progressivement"
+
+====================================================
+FIN DU PLANNING
+====================================================
+
+✅Pour la gestion de projet de PAC//SHIFT, l’outil retenu est GitHub Projects (tableau Kanban intégré au dépôt du projet).
+
+🔧 Choix de l’outil
+GitHub Projects permet de centraliser dans un même environnement :
+
+le code source (repository),
+la gestion des tâches (issues),
+le suivi d’avancement (Kanban),
+et les bugs / retours.
+
+Ce choix est particulièrement adapté à un projet étudiant car il évite la dispersion des outils tout en restant standard dans l’industrie.
+
+📌 Organisation concrète (Kanban)
+Le projet est structuré en colonnes simples :
+
+Backlog : liste des fonctionnalités et idées (issues)
+To Do : tâches planifiées pour le sprint en cours
+In Progress : tâches en cours de développement
+Review / Test : éléments à tester ou valider
+Done : tâches terminées
+
+Chaque tâche est matérialisée par une issue, décrite avec :
+
+un objectif clair,
+des critères d’acceptation,
+une priorité (alignée avec MoSCoW).
+
+
+🎯 Utilisation opérationnelle
+
+Les issues servent à découper le projet en unités de travail concrètes.
+Le Kanban permet une visualisation immédiate de l’état d’avancement.
+Les commits sont liés aux issues pour assurer une traçabilité.
+Les labels (bug, feature, amélioration) facilitent le suivi.
+
+
+✅ Justification pour le jury
+Ce choix démontre une approche structurée et professionnelle :
+
+Centralisation : un seul outil pour code + gestion projet
+Traçabilité : lien direct entre développement et fonctionnalités
+Rigueur : suivi clair du MVP et des priorités
+Scalabilité : méthode compatible avec des équipes plus larges
+
+
+🧠 Synthèse
+
+GitHub Projects permet de piloter PAC//SHIFT comme un vrai projet de production, avec une gestion claire des priorités, des tâches et des livrables, tout en restant simple et adapté au cadre académique.
