@@ -4,25 +4,35 @@ export default class ShiftSystem {
     this.player = player;
     this.wallCollider = wallCollider;
 
+    // état
     this.active = false;
-    this.duration = 2000; // durée en ms
+
+    // ✅ jauge
+    this.maxCharge = 100;
+    this.charge = 0;
+
+    // paramètres
+    this.cost = 100;       // coût pour activer
+    this.duration = 2000;  // durée effet
   }
 
   tryActivate() {
-    if (this.active) return;
+    // ❌ pas assez de charge
+    if (this.active || this.charge < this.cost) return;
 
     this.activate();
   }
 
   activate() {
     this.active = true;
+    this.scene.triggerShiftFX();
 
-    // ✅ Désactiver UNIQUEMENT collision player ↔ walls
-    if (this.wallCollider) {
-      this.wallCollider.active = false;
-    }
+    // consomme toute la jauge
+    this.charge = 0;
 
-    // feedback visuel minimal (CDC)
+    // désactiver collision murs
+    this.wallCollider.active = false;
+
     this.player.setFillStyle(0x00ffff);
 
     this.scene.time.delayedCall(this.duration, () => {
@@ -33,10 +43,18 @@ export default class ShiftSystem {
   deactivate() {
     this.active = false;
 
-    if (this.wallCollider) {
-      this.wallCollider.active = true;
-    }
+    this.wallCollider.active = true;
 
     this.player.setFillStyle(0xffff00);
+  }
+
+  // ✅ recharge par pastille
+  addCharge(amount) {
+    this.charge = Math.min(this.charge + amount, this.maxCharge);
+  }
+
+  // ✅ pour debug/affichage
+  getRatio() {
+    return this.charge / this.maxCharge;
   }
 }
